@@ -1,0 +1,336 @@
+<link rel='stylesheet' type='text/css' href='styles.css' media="screen"/>
+<link rel='stylesheet' type='text/css' href='css/bootstrap.min.css' media="screen"/>
+<link rel='stylesheet' type='text/css' href='css/bootstrap.css' media="screen"/>
+<link rel="stylesheet" type='text/css' href='css/bootstrap-datetimepicker.min.css'	media="screen"/>
+	
+<link rel="stylesheet" type='text/css'	href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+<script	type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script	type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="js/getEndereco.js"></script>
+<script type="text/javascript" src="js/jquery.maskMoney.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#cep").change(function() {
+		getEndereco($("#cep").val());
+	});
+});
+
+$(document).ready(function() {
+
+	$("#currency").maskMoney();
+
+	$("#preco").maskMoney({
+		showSymbol : true,
+		symbol : "R$",
+		decimal : ".",
+		thousands : "."
+	});
+
+	$("#precision").maskMoney({
+		precision : 3
+	});
+});
+
+$(function() {
+	$("#cliente")
+			.autocomplete(
+					{
+						source : function(request, response) {
+							$
+									.ajax({
+										url : "/SisEstoqueFarmacia/AutoCompleteClienteServlet.du?filtro="
+												+ request.term,
+										type : "GET",
+										dataType : "json",
+										success : function(data) {		
+											response(data);												
+										}											
+									});
+						}
+					});
+
+	$(function() {
+		$(".clienteVenda")
+				.autocomplete(
+						{
+							source : function(request, response) {
+								$
+										.ajax({
+											url : "/SisEstoqueFarmacia/AutoCompleteClienteServlet.du?filtro="
+													+ request.term,
+											type : "GET",
+											dataType : "json",
+											success : function(data) {
+												response($.map(data, function(i,v){								                    
+							                        return {
+							                                label: i,
+							                                value: v
+							                               };								                    
+								                }));
+											}											
+										});
+							},
+							select : function(event, ui){		
+								$("#codigoClienteVenda").val(ui.item.value);
+								ui.item.value = ui.item.label; 
+								$("#clienteVenda").val(ui.item.value);
+								$("#botaoAdd").prop("disabled", false);
+							}
+						});
+		$(".fornecedorVenda")
+				.autocomplete(
+						{
+							source : function(request, response) {
+								$
+										.ajax({
+											url : "/SisEstoqueFarmacia/AutoCompleteFornecedorServlet.du?filtro="
+													+ request.term,
+											type : "GET",
+											dataType : "json",
+											success : function(data) {
+												response($.map(data, function(i,v){								                    
+							                        return {
+							                                label: i,
+							                                value: v
+							                               };								                    
+								                }));
+											}											
+										});
+							},
+							select : function(event, ui){		
+								$("#codigoFornecedorVenda").val(ui.item.value);
+								ui.item.value = ui.item.label; 
+								$("#fornecedorVenda").val(ui.item.value);
+								$("#botaoAdd").prop("disabled", false);
+							}
+						});
+	
+			
+	$("#produto").autocomplete(
+					{
+						source : function(request, response) {
+							$
+									.ajax({
+										url : "/SisEstoqueFarmacia/AutoCompleteProdutoServlet.du?filtro="
+												+ request.term,
+										type : "GET",
+										dataType : "json",
+										success : function(data) {
+											response(data);
+										}
+									});
+						}
+					});
+	$("#categoriaId").autocomplete(
+			{
+				source : function(request, response) {
+					$
+							.ajax({
+								url : "/SisEstoqueFarmacia/AutoCompleteCategoriaServlet.du?categoria="
+										+ request.term,
+								type : "GET",
+								dataType : "json",
+								success : function(data) {
+									response(data);
+								}
+							});
+				}
+			});
+	$("#unidadeId").autocomplete(
+			{
+				source : function(request, response) {
+					$
+							.ajax({
+								url : "/SisEstoqueFarmacia/AutoCompleteUnidadeServlet.du?filtro="
+										+ request.term,
+								type : "GET",
+								dataType : "json",
+								success : function(data) {
+									response(data);
+								}
+							});
+				}
+			});
+	$("#fornecedorId").autocomplete(
+			{
+				source : function(request, response) {
+					$
+							.ajax({
+								url : "/SisEstoqueFarmacia/AutoCompleteFornecedorServlet.du?filtro="
+										+ request.term,
+								type : "GET",
+								dataType : "json",
+								success : function(data) {
+									response(data);
+								}
+							});
+				}
+			});
+	$("#usuarioId").autocomplete(
+			{
+				source : function(request, response) {
+					$
+							.ajax({
+								url : "/SisEstoqueFarmacia/AutoCompleteUsuarioServlet.du?filtro="
+										+ request.term,
+								type : "GET",
+								dataType : "json",
+								success : function(data) {
+									response(data);
+								}
+							});
+				}
+			});
+});
+	
+	
+
+jQuery(function($) {
+	$(".cpf").mask("999.999.999-99");
+	$("#cnpj").mask("99.999.999/9999-99");
+	$("#crf").mask("99999");
+	$(".fonemask").mask("(99) 9999-9999");
+	$(".cepmask").mask("99.999-999");
+	$(".matricula").mask("9999-9");
+	$(".rg").mask("999999-9");
+	$("#numeroLoteMedicamento").mask("999.999");
+	$("#registroMSMedicamento").mask("9999.999999.999");
+	});
+});
+
+</script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<style type="text/css">
+p {
+	width: auto;
+	padding: 0px;
+	margin: 0px;
+}
+
+#titulo-costa {
+	width: auto;
+	height: 110px;
+	background-color: white;
+}
+
+#buscar {
+	float: left;
+	width: 75%;
+}
+
+#botao-pesquisa {
+	float: right;
+	width: 25%;
+}
+
+th {
+	font-size: 16px;
+	font-family: Arial;
+	font-weight: bold;
+	color: white;
+	background-color: #357c7c;
+	text-align: center !important;
+}
+
+/** PLano de Fundo Chato**/
+#wrapper {
+	width: 80%;
+	right: 0px;
+	min-height: 100px;
+	margin: 0px auto;
+	position: relative;
+}
+
+/**** general text styling ****/
+#wrapper a {
+	color: rgb(95, 155, 198);
+	text-decoration: underline;
+}
+
+#wrapper h1 {
+	font-size: 28px;
+	color: rgb(6, 106, 117);
+	padding: 1px 0 1px 0;
+	font-family: 'FranchiseRegular', 'Arial Narrow', Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+/** For the moment only webkit supports the background-clip:text; */
+#wrapper h1 {
+	background: -webkit-repeating-linear-gradient(-45deg, rgb(18, 83, 93),
+		rgb(18, 83, 93) 20px, rgb(64, 111, 118) 20px, rgb(64, 111, 118) 40px,
+		rgb(18, 83, 93) 40px);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+#wrapper h1:after {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 2px;
+	margin-top: 10px;
+	background: -moz-linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(147,
+		184, 189, 0)), color-stop(20%, rgba(147, 184, 189, 0.8)),
+		color-stop(53%, rgba(147, 184, 189, 1)),
+		color-stop(79%, rgba(147, 184, 189, 0.8)),
+		color-stop(100%, rgba(147, 184, 189, 0)));
+	background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: -o-linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: -ms-linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: linear-gradient(left, rgba(147, 184, 189, 0) 0%,
+		rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%,
+		rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+}
+
+#wrapper label {
+	color: rgb(64, 92, 96);
+}
+
+/* TAMANHO DOS INPUTS */
+#wrapper /*BOTAO*/ 
+#wrapper p.button input {
+	width: 20%;
+	cursor: pointer;
+	background: rgb(61, 157, 179);
+	padding: 8px 5px;
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	color: #fff;
+	font-size: 14px;
+	border: 1px solid rgb(28, 108, 122);
+	box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px
+		rgb(254, 254, 254), 0px 5px 3px 3px rgb(210, 210, 210);
+}
+
+/** Não apagar**/
+#register,#login {
+	top: 0px;
+	width: 108%;
+	padding: 2% 4% 1% 5%;
+	margin: 0 0 2% -3%;
+	background: rgb(247, 247, 247);
+	border: 1px solid rgba(147, 184, 189, 0.8);
+	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px
+		5px rgba(208, 223, 226, 0.4) inset;
+	-moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px
+		rgba(208, 223, 226, 0.4) inset;
+	box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px
+		rgba(208, 223, 226, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+</style>

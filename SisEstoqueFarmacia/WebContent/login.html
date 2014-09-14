@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login e Senha</title>
+	<style type="text/css">
+		
+		#titulo-costa{
+		width: auto;
+		height: 70%;
+		background-color: white;
+		}
+		
+		#titulo{
+		
+		width: auto;
+		height: 180px;
+		}
+	
+		body{
+		background-color: #D3E2FF;
+		}
+		
+		#login-caixa{
+
+		width: 380px;
+		height: 260px;
+		margin: 60px auto 0px;
+		border-radius: 5px;
+		
+		}
+		#login-interno{
+		background-color: white;
+		width: 400px;
+		height: 240px;
+		position: absolute;
+		border-radius: 5px;
+		margin: 0px;
+		box-shadow:0px 0px 6px black;
+		overflow: hidden;
+		}
+		#login-interno-titulo{
+		background-color: silver;
+		height: 45px;
+		text-align: center;
+		font:bold 14px/45px sans-serif;
+		background: #f2f6f8; /* Old browsers */
+		background: -moz-linear-gradient(top, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f6f8), color-stop(50%,#d8e1e7), color-stop(51%,#b5c6d0), color-stop(100%,#e0eff9)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+		border-bottom: 2px solid #bfc3c5;
+		box-shadow: 1px 0px 3px #dedede;
+		color: #555555;
+		text-shadow: 1px 0px 1px white;
+		}
+		.input-div{
+		margin: 15px;
+		padding: 5px;
+		background-color: #f2f5f7;
+		border-radius: 3px;
+		}
+		.input-div input{
+		width: 250px;
+		height: 35px;
+		padding-left: 5px;
+		padding-right: 15px;
+		font: normal 13px sans-serif;
+		color: #aeaeae;
+		border-radius: 3px;
+		border: 1px solid #bfc4c6;
+		outline: none;
+		}
+		.input-div:hover{
+		background-color:#e0f1fc; 
+		}
+		.input-div:hover input{
+		border-color:#7dc6dd;
+		}
+		#input-senha{
+		margin-top:-10px;
+		padding-right: 15px;
+		}
+		#input-senha input{
+		height: 35px;
+		width: 24titulo-costa5px;
+		padding-left: 5px;
+		padding-right: 15px;
+		font: normal 13px sans-serif;
+		color: #aeaeae;
+		border-radius: 3px;
+		border: 1px solid #bfc4c6;
+		outline: none;
+		}
+		#botoes{
+		width: 280px;
+		margin-left: 25px;
+		}
+		#botao-login{
+		float: right;
+		
+		padding: 5px 13px;
+		font: normal 13px sans-serif;
+		border-radius: 20px;
+		text-shadow: 0px 1px 0px white;
+		border: 1px solid 9eb9c3;
+		color: #19567B;  
+		box-shadow: 0px 0px 10px #c9c9c9;
+		background: #d4e4ef; /* Old browsers */
+		background: -moz-linear-gradient(top, #d4e4ef 0%, #86aecc 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d4e4ef), color-stop(100%,#86aecc)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #d4e4ef 0%,#86aecc 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #d4e4ef 0%,#86aecc 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #d4e4ef 0%,#86aecc 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #d4e4ef 0%,#86aecc 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc',GradientType=0 ); /* IE6-9 */
+		}
+		#botao-login:hover{
+		background: #86aecc; /* Old browsers */
+		background: -moz-linear-gradient(top, #86aecc 0%, #d4e4ef 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#86aecc), color-stop(100%,#d4e4ef)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #86aecc 0%,#d4e4ef 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #86aecc 0%,#d4e4ef 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #86aecc 0%,#d4e4ef 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #86aecc 0%,#d4e4ef 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86aecc', endColorstr='#d4e4ef',GradientType=0 ); /* IE6-9 */
+		color: #607E90;
+		cursor: pointer;
+		}
+	
+	</style>
+</head>
+<body>
+	<div id="titulo-costa">
+		<div id="titulo" align="center">
+		<img src="imagens/SisFarme.JPG" style="float:center;" height="80%"/>			
+		</div>		
+	</div>		
+			
+	<div id="login-caixa">
+		<div id="login-interno">
+			<div id="login-interno-titulo">
+				Faça seu Login
+				<form action="LoginServlets" method="post">
+					<div class="input-div" id="input-usuario">
+						Login   <input type="text" name="login" required = "true"/>
+					</div>
+					<div class="input-div" id="input-senha">
+						Senha     <input type="password" name="senha" />
+					</div>
+					<div id="botoes" align="center">
+						<input id="botao-login" type="submit" value="Entrar" />
+						<div id="lembrar-senha">
+							<input type="checkbox"/>Lembrar senha
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
