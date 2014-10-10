@@ -17,6 +17,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>VotacaoServlet</servlet-name>
-    <url-pattern>/VotacaoServlet</url-pattern>
+    <url-pattern>/VotacaoServlet.du</url-pattern>
   </servlet-mapping>
 </web-app>

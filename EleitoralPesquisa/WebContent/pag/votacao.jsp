@@ -34,26 +34,31 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+	<nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse"
+		role="navigation">
 	<div class="container">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-main-collapse">
 				<i class="fa fa-bars"></i>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-play-circle"></i> <span class="light">Simulação</span>
-				ELEIÇÕES - <span style="color: #FFC400">2</span> <span style="color: #04D800">0</span> <span style="color: #004BB5">1</span>
+			<a class="navbar-brand page-scroll" href="#page-top"> <i
+				class="fa fa-play-circle"></i> <span class="light">Simulação</span>
+				ELEIÇÕES - <span style="color: #FFC400">2</span> <span
+				style="color: #04D800">0</span> <span style="color: #004BB5">1</span>
 				<span style="color: #FFFFFF">4</span> - PB
 			</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+		<div
+			class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			<ul class="nav navbar-nav">
 				<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 				<li class="hidden active"><a href="#page-top"></a></li>
 				<li><a class="page-scroll" href="../index.html">Home</a></li>
 				<li><a class="page-scroll" href="#download">Resultados</a></li>
-<!-- 				<li><a class="page-scroll" href="#contact">Contato</a></li> -->
+				<!-- 				<li><a class="page-scroll" href="#contact">Contato</a></li> -->
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -68,103 +73,170 @@
 				<div class="col-md-8 col-md-offset-2">
 					<br>
 					<h1 style="color: black;">Vote Abaixo.</h1>
-						<a href="#about" class="btn btn2-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+					<a href="#about" class="btn btn2-circle page-scroll"> <i
+						class="fa fa-angle-double-down animated"></i>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	</header>
-			
-	<section id="about" class="container content-section text-center">
+
+<section id="about" class="container content-section text-center">
 	<div class="row" align="center">
-				<div class="col-md-8 col-md-offset-2">
-					<br>
-					<h1 style="color: white;">Candidatos a Presidente</h1>
-				</div>
+		<div class="col-md-8 col-md-offset-2">
+			<br>
+			<h1 style="color: white;">Candidatos a Governador</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-6 col-sm-6 col-lg-4">
+			<hgroup>
+			<h2>Cássio Cunha Lima</h2>
+			<h3>PSDB</h3>
+			</hgroup>
+			<article class="candidatos" data-candidato="1"
+				data-identificacao="aecio-neves">
+			<div class="thumb espaca">
+				<span class="btn_confirma"><img
+					src="../img/candidatos/botao_confirma.png"></span> <img
+					src="../img/candidatos/cassio.png" alt="Cássio Cunha Lima - PSDB"
+					title="Aécio Neves - PSDB">
 			</div>
-		<div class="linhas espaca" style="margin-left: 3%; ">
-		<article class="candidatos" data-candidato="1" data-identificacao="aecio-neves">
-		<div class="header">
-			<span>Aécio Neves</span> <br> <a href="http://www.psdb.org.br/" target="_blanck"> <em>PSDB</em>
-			</a>
-		</div>
-		<div class="thumb espaca">
-			<span class="btn_confirma"><img src="../img/candidatos/botao_confirma.png"></span>
-			<img src="../img/candidatos/candidato1.png" alt="Aécio Neves - PSDB" title="Aécio Neves - PSDB"> 
-		</div>
-		<div class="percent"></div>
-		</article>
-		<article class="candidatos" data-candidato="3" data-identificacao="dilma-roussef">
-		<div class="header">
-			<span>Dilma Roussef</span> <br> <a href="http://www.pt.org.br/" target="_blanck"> <em>PT</em>
-			</a>
-		</div>
-		<div class="thumb espaca">
-			<span class="btn_confirma"><img src="../img/candidatos/botao_confirma.png"></span>
-			<img src="../img/candidatos/candidato3.png" alt="Dilma Roussef - PT" title="Dilma Roussef - PT"> 
-		</div>
-		<div class="percent"></div>
-		</article>
-		<article class="candidatos" data-candidato="4" data-identificacao="marina-silva">
-		<div class="header">
-			<span>Marina Silva</span> <br> <a href="http://www.psb40.org.br/" target="_blanck"> <em>PSB</em>
-			</a>
-		</div>
-		<div class="thumb espaca">
-			<span class="btn_confirma"><img src="../img/candidatos/botao_confirma.png"></span>
-			<img src="../img/candidatos/candidato4.png" alt="Marina Silva - PSB" title="Marina Silva - PSB"> 
-		</div>
-		<div class="percent"></div>
-		</article>
-		<article class="candidatos" data-candidato="5" data-identificacao="everaldo-pereira">
-		<div class="header">
-			<span>Pr. Everaldo Pereira</span> <br> <a href="http://www.psc.org.br/" target="_blanck"> <em>PSC</em>
-			</a>
-		</div>
-		<div class="thumb espaca">
-			<span class="btn_confirma"><img src="../img/candidatos/botao_confirma.png"></span>
-			<img src="../img/candidatos/candidato5.png" alt="Pr. Everaldo Pereira - PSC" title="Pr. Everaldo Pereira - PSC">
+			</article>
 			
 		</div>
-		<div class="percent"></div>
-		</article>
-  <article class="candidatos" data-candidato="6" data-identificacao="nao_sei">
-		<div class="header">
-			<span>Não sei</span> <br> <em>Sem Partido</em>
+
+		<!--/span-->
+		<div class="col-6 col-sm-6 col-lg-4">
+			<hgroup>
+			<h2>Ricardo Coutinho</h2>
+			<h3>PSB</h3>
+			</hgroup>
+			<article class="candidatos" data-candidato="2">
+			<div class="thumb espaca">
+				<span class="btn_confirma"><img
+					src="../img/candidatos/botao_confirma.png"></span> <img
+					src="../img/candidatos/ricardo.png" alt="Ricardo Coutinho - PSB"
+					title="Dilma Roussef - PT">
+			</div>
+			</article>
 		</div>
-		<div class="thumb espaca">
-			<span class="btn_confirma"><img src="../img/candidatos/botao_confirma.png"></span>
-			<img src="../img/candidatos/candidato12.png" alt="Não sei - Não sei" title="Não sei - Não sei"> 
+		<!--/span-->
+		<div class="col-6 col-sm-6 col-lg-4">
+			<hgroup>
+			<h2>Nulo ou Branco</h2>
+			<h3>Indeciso</h3>
+			</hgroup>
+			<article class="candidatos" data-candidato="6"
+				data-identificacao="nao_sei">
+			<div class="thumb espaca">
+				<span class="btn_confirma"><img
+					src="../img/candidatos/botao_confirma.png"></span> <img
+					src="../img/candidatos/candidato12.png" alt="Não sei - Não sei"
+					title="Não sei - Não sei">
+			</div>
+			</article>
+			
 		</div>
-		</article>
-		</div>
+	</div>
 	</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-<!--             <p>Copyright &copy; Geraldo Valencia, 2014</p> -->
-        </div>
-    </footer>
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="../js/jquery-1.11.0.js"></script>
+<!-- CANDIDATOS A PRESIDENTE -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+	<section id="about" class="container content-section text-center">
+	<div class="row" align="center">
+		<div class="col-md-8 col-md-offset-2">
+			<br>
+			<h1 style="color: white;">Candidatos a Presidente</h1>
+		</div>
+	</div>
 
-    <!-- Plugin JavaScript -->
-    <script src="../js/jquery.easing.min.js"></script>
-    <!-- Plugin Votacao -->
-    <script src="../js/main.js"></script>
+	<div class="row">
+		<div class="col-6 col-sm-6 col-lg-4">
+			<hgroup>
+			<h2>Aécio Neves</h2>
+			<h3>PSDB</h3>
+			</hgroup>
+			<article class="candidatos" data-candidato="1"
+				data-identificacao="aecio-neves">
+			<div class="thumb espaca">
+				<span class="btn_confirma"><img
+					src="../img/candidatos/botao_confirma.png"></span> <img
+					src="../img/candidatos/candidato1.png" alt="Aécio Neves - PSDB"
+					title="Aécio Neves - PSDB">
+			</div>
+			</article>
+			
+		</div>
 
-<!--     Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+		<!--/span-->
+		<div class="col-6 col-sm-6 col-lg-4">
+			<hgroup>
+			<h2>Dilma Roussef</h2>
+			<h3>PT</h3>
+			</hgroup>
+			<form action="VotacaoServlet.du" method="get">
+			<article class="candidatos" data-candidato="2">
+			<div class="thumb espaca">
+				<span class="btn_confirma">
+				<input type="hidden" id="dilma">
+				<input type="image" src="../img/candidatos/botao_confirma.png" 
+				name="image">
+				</span> 
+				<img
+					src="../img/candidatos/candidato3.png" alt="Dilma Roussef - PT"
+					title="Dilma Roussef - PT">
+			</div>
+			</article>
+			</form>
+		</div>
+		<!--/span-->
+		<div class="col-6 col-sm-6 col-lg-4">
+			<hgroup>
+			<h2>Nulo ou Branco</h2>
+			<h3>Indeciso</h3>
+			</hgroup>
+			<article class="candidatos" data-candidato="6"
+				data-identificacao="nao_sei">
+			<div class="thumb espaca">
+				<span class="btn_confirma"><img
+					src="../img/candidatos/botao_confirma.png"></span> <img
+					src="../img/candidatos/candidato12.png" alt="Não sei - Não sei"
+					title="Não sei - Não sei">
+			</div>
+			</article>
+			
+		</div>
+	</div>
+	</section>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../js/grayscale.js"></script>
+	<!-- Footer -->
+	<footer>
+	<div class="container text-center">
+		<!--             <p>Copyright &copy; Geraldo Valencia, 2014</p> -->
+	</div>
+	</footer>
+
+	<!-- jQuery Version 1.11.0 -->
+	<script src="../js/jquery-1.11.0.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="../js/jquery.easing.min.js"></script>
+	<!-- Plugin Votacao -->
+	<script src="../js/main.js"></script>
+
+	<!--     Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="../js/grayscale.js"></script>
 
 </body>
 </html>
