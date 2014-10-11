@@ -65,7 +65,13 @@ public class VotacaoServlet extends HttpServlet {
 			
 			votarTodos = "votouTodos";
 			request.getSession().setAttribute("votarTodos", votarTodos);
-			request.getRequestDispatcher("pag/votacao.jsp").forward(
+			
+			Cookie cookieVoto = new Cookie("votouTotal","votou");
+			response.addCookie(cookieVoto);
+			System.out.println("Setou o cookie de voto total.");
+			
+			
+			request.getRequestDispatcher("pag/votouTodos.jsp").forward(
 					request, response);
 			//Lembrar de setar os cookies para nao carregar votação apos a mesma
 		}else{

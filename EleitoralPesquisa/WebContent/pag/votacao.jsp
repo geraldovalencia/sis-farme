@@ -65,7 +65,7 @@
 				<li class="hidden active"><a href="#page-top"></a></li>
 				<li><a class="page-scroll"
 					href="${pageContext.request.contextPath}/index.html">Home</a></li>
-				<li><a class="page-scroll" href="#download">Resultados</a></li>
+				<li><a class="page-scroll" href="${pageContext.request.contextPath}/Resultados.du">Resultados</a></li>
 				<!-- 				<li><a class="page-scroll" href="#contact">Contato</a></li> -->
 			</ul>
 		</div>

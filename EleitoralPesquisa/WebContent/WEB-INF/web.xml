@@ -29,4 +29,14 @@
     <servlet-name>PaginaVoto</servlet-name>
     <url-pattern>/PaginaVoto.du</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Resultados</display-name>
+    <servlet-name>Resultados</servlet-name>
+    <servlet-class>Sevlets.Resultados</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Resultados</servlet-name>
+    <url-pattern>/Resultados.du</url-pattern>
+  </servlet-mapping>
 </web-app>

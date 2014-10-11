@@ -27,27 +27,33 @@ public class PaginaVoto extends HttpServlet {
 		
 		System.out.println("Abriu a página votação. Pela primeira vez.");
 		//response.sendRedirect("pag/votacao.jsp");
+		HttpSession session = null;
 		
 		Cookie[] cookieVotos = request.getCookies();
 		String val = null;
 		if(cookieVotos != null){
 			
 			for (Cookie cookie : cookieVotos){
-				if("myVotoDilma".equals(cookie.getName())){
-					request.getRequestDispatcher("pag/TesteDilma.jsp").forward(
+				if("votouTotal".equals(cookie.getName())){
+					
+					session = request.getSession(false);
+					
+					request.getRequestDispatcher("pag/votouTodos.jsp").forward(
 							request, response);
 				}
 			}
+		}else{
+			
+			session = request.getSession(true);
+			
+			String votarGovernador = null;
+			String votarPresidente = null;
+			
+			request.getSession().setAttribute("votarGovernador", votarGovernador);
+			request.getSession().setAttribute("votarPresidente", votarPresidente);
+			
+			response.sendRedirect("pag/votacao.jsp");
 		}
-		HttpSession session = request.getSession(true);
-		
-		String votarGovernador = null;
-		String votarPresidente = null;
-		
-		request.getSession().setAttribute("votarGovernador", votarGovernador);
-		request.getSession().setAttribute("votarPresidente", votarPresidente);
-		
-		response.sendRedirect("pag/votacao.jsp");
 	
 	}
 
