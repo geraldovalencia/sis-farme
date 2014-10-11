@@ -1,20 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!-- para estruturas de controle e repetição e setar variáveis -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%><!-- para formatações -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%><!-- para funções -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>Eleições 2014</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
+	rel="stylesheet">
 
-<link href="../css/main.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/main.css"
+	rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../css/votacao.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/votacao.css"
+	rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="../font-awesome-4.1.0/css/font-awesome.min.css"
+<link
+	href="${pageContext.request.contextPath}/font-awesome-4.1.0/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link
 	href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
@@ -56,7 +63,8 @@
 			<ul class="nav navbar-nav">
 				<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 				<li class="hidden active"><a href="#page-top"></a></li>
-				<li><a class="page-scroll" href="../index.html">Home</a></li>
+				<li><a class="page-scroll"
+					href="${pageContext.request.contextPath}/index.html">Home</a></li>
 				<li><a class="page-scroll" href="#download">Resultados</a></li>
 				<!-- 				<li><a class="page-scroll" href="#contact">Contato</a></li> -->
 			</ul>
@@ -72,146 +80,197 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<br>
-					<h1 style="color: black;">Vote Abaixo.</h1>
-					<a href="#about" class="btn btn2-circle page-scroll"> <i
-						class="fa fa-angle-double-down animated"></i>
-					</a>
+					<c:choose>
+						<c:when test="${votarGovernador == null}">
+							<h1 style="color: black;">Vote Abaixo.</h1>
+							<p>
+							<span style="color:black">Simule o seu voto para 
+							<strong>GOVERNADOR.</strong></span></p>
+							
+							<a href="#about" class="btn btn2-circle page-scroll"> <i
+								class="fa fa-angle-double-down animated"></i>
+							</a>
+							
+						</c:when>	
+						<c:otherwise>
+						<h1 style="color: black;">Vote Abaixo.</h1>
+							<p>
+							<span style="color:black">Simule o seu voto para 
+							<strong>PRESIDENTE.</strong></span></p>
+							
+							<a href="#about" class="btn btn2-circle page-scroll"> <i
+								class="fa fa-angle-double-down animated"></i>
+							</a>
+						</c:otherwise>
+					</c:choose>	
 				</div>
 			</div>
 		</div>
 	</div>
 	</header>
 
-<section id="about" class="container content-section text-center">
-	<div class="row" align="center">
-		<div class="col-md-8 col-md-offset-2">
-			<br>
-			<h1 style="color: white;">Candidatos a Governador</h1>
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-6 col-sm-6 col-lg-4">
-			<hgroup>
-			<h2>Cássio Cunha Lima</h2>
-			<h3>PSDB</h3>
-			</hgroup>
-			<article class="candidatos" data-candidato="1"
-				data-identificacao="aecio-neves">
-			<div class="thumb espaca">
-				<span class="btn_confirma"><img
-					src="../img/candidatos/botao_confirma.png"></span> <img
-					src="../img/candidatos/cassio.png" alt="Cássio Cunha Lima - PSDB"
-					title="Aécio Neves - PSDB">
+	<c:choose>
+		<c:when test="${votarGovernador == null}">
+			<section id="about" class="container content-section text-center">
+			<div class="row" align="center">
+				<div class="col-md-8 col-md-offset-2">
+					<br>
+					<h1 style="color: white;">Candidatos a Governador</h1>
+				</div>
 			</div>
-			</article>
-			
-		</div>
 
-		<!--/span-->
-		<div class="col-6 col-sm-6 col-lg-4">
-			<hgroup>
-			<h2>Ricardo Coutinho</h2>
-			<h3>PSB</h3>
-			</hgroup>
-			<article class="candidatos" data-candidato="2">
-			<div class="thumb espaca">
-				<span class="btn_confirma"><img
-					src="../img/candidatos/botao_confirma.png"></span> <img
-					src="../img/candidatos/ricardo.png" alt="Ricardo Coutinho - PSB"
-					title="Dilma Roussef - PT">
+			<div class="row">
+				<div class="col-6 col-sm-6 col-lg-4">
+					<hgroup>
+					<h2>Cássio Cunha Lima</h2>
+					<h3>PSDB</h3>
+					</hgroup>
+
+					<form action="/EleitoralPesquisa/VotacaoServlet.du" method="post">
+						<article class="candidatos" data-candidato="1"
+							data-identificacao="cassio">
+						<div class="thumb espaca">
+							<input type="hidden" name="cassio" value="cassio"> <span
+								class="btn_confirma"> <input type="image"
+								src="${pageContext.request.contextPath}/img/candidatos/botao_confirma.png"
+								name="image"></span> <img
+								src="${pageContext.request.contextPath}/img/candidatos/cassio.png"
+								alt="Cássio Cunha Lima - PSDB" title="Cássio Cunha Lima - PSDB">
+						</div>
+						</article>
+					</form>
+
+				</div>
+
+				<!--/span-->
+				<div class="col-6 col-sm-6 col-lg-4">
+					<hgroup>
+					<h2>Ricardo Coutinho</h2>
+					<h3>PSB</h3>
+					</hgroup>
+
+					<form action="/EleitoralPesquisa/VotacaoServlet.du" method="post">
+						<article class="candidatos" data-candidato="2">
+						<div class="thumb espaca">
+							<input type="hidden" name="ricardo" value="ricardo"> <span
+								class="btn_confirma"> <input type="image"
+								src="${pageContext.request.contextPath}/img/candidatos/botao_confirma.png"
+								name="image">
+							</span> <img
+								src="${pageContext.request.contextPath}/img/candidatos/ricardo.png"
+								alt="Ricardo Coutinho - PSB" title="Ricardo Coutinho - PSB">
+						</div>
+						</article>
+					</form>
+				</div>
+				<!--/span-->
+				<div class="col-6 col-sm-6 col-lg-4">
+					<hgroup>
+					<h2>Nulo ou Branco</h2>
+					<h3>Indeciso</h3>
+					</hgroup>
+
+					<form action="/EleitoralPesquisa/VotacaoServlet.du" method="post">
+						<article class="candidatos" data-candidato="6"
+							data-identificacao="nao_sei">
+						<div class="thumb espaca">
+							<input type="hidden" name="nuloGovernador" value="nuloGovernador">
+							<span class="btn_confirma"> <input type="image"
+								src="${pageContext.request.contextPath}/img/candidatos/botao_confirma.png"
+								name="image">
+							</span> <img
+								src="${pageContext.request.contextPath}/img/candidatos/candidato12.png"
+								alt="Não sei - Não sei" title="Não sei - Não sei">
+						</div>
+						</article>
+					</form>
+				</div>
 			</div>
-			</article>
-		</div>
-		<!--/span-->
-		<div class="col-6 col-sm-6 col-lg-4">
-			<hgroup>
-			<h2>Nulo ou Branco</h2>
-			<h3>Indeciso</h3>
-			</hgroup>
-			<article class="candidatos" data-candidato="6"
-				data-identificacao="nao_sei">
-			<div class="thumb espaca">
-				<span class="btn_confirma"><img
-					src="../img/candidatos/botao_confirma.png"></span> <img
-					src="../img/candidatos/candidato12.png" alt="Não sei - Não sei"
-					title="Não sei - Não sei">
+
+			</section>
+		</c:when>
+		<c:otherwise>
+
+			<!-- CANDIDATOS A PRESIDENTE -->
+
+			<section id="about" class="container content-section text-center">
+			<div class="row" align="center">
+				<div class="col-md-8 col-md-offset-2">
+					<br>
+					<h1 style="color: white;">Candidatos a Presidente</h1>
+				</div>
 			</div>
-			</article>
-			
-		</div>
-	</div>
-	</section>
 
+			<div class="row">
+				<div class="col-6 col-sm-6 col-lg-4">
+					<hgroup>
+					<h2>Aécio Neves</h2>
+					<h3>PSDB</h3>
+					</hgroup>
 
-<!-- CANDIDATOS A PRESIDENTE -->
+					<form action="/EleitoralPesquisa/VotacaoServlet.du" method="post">
+						<article class="candidatos" data-candidato="1"
+							data-identificacao="aecio-neves">
+						<div class="thumb espaca">
+							<input type="hidden" name="aecio" value="aecio"> <span
+								class="btn_confirma"> <input type="image"
+								src="${pageContext.request.contextPath}/img/candidatos/botao_confirma.png"
+								name="image">
+							</span> <img
+								src="${pageContext.request.contextPath}/img/candidatos/candidato1.png"
+								alt="Aécio Neves - PSDB" title="Aécio Neves - PSDB">
+						</div>
+						</article>
+					</form>
 
-	<section id="about" class="container content-section text-center">
-	<div class="row" align="center">
-		<div class="col-md-8 col-md-offset-2">
-			<br>
-			<h1 style="color: white;">Candidatos a Presidente</h1>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-6 col-sm-6 col-lg-4">
-			<hgroup>
-			<h2>Aécio Neves</h2>
-			<h3>PSDB</h3>
-			</hgroup>
-			<article class="candidatos" data-candidato="1"
-				data-identificacao="aecio-neves">
-			<div class="thumb espaca">
-				<span class="btn_confirma"><img
-					src="../img/candidatos/botao_confirma.png"></span> <img
-					src="../img/candidatos/candidato1.png" alt="Aécio Neves - PSDB"
-					title="Aécio Neves - PSDB">
+				</div>
+				<!--/span-->
+				<div class="col-6 col-sm-6 col-lg-4">
+					<hgroup>
+					<h2>Dilma Roussef</h2>
+					<h3>PT</h3>
+					</hgroup>
+					<form action="/EleitoralPesquisa/VotacaoServlet.du" method="post">
+						<article class="candidatos" data-candidato="2">
+						<div class="thumb espaca">
+							<span class="btn_confirma"> <input type="hidden"
+								name="dilma" value="dilma"> <input type="image"
+								src="${pageContext.request.contextPath}/img/candidatos/botao_confirma.png"
+								name="image">
+							</span> <img
+								src="${pageContext.request.contextPath}/img/candidatos/candidato3.png"
+								alt="Dilma Roussef - PT" title="Dilma Roussef - PT">
+						</div>
+						</article>
+					</form>
+				</div>
+				<!--/span-->
+				<div class="col-6 col-sm-6 col-lg-4">
+					<hgroup>
+					<h2>Nulo ou Branco</h2>
+					<h3>Indeciso</h3>
+					</hgroup>
+					<form action="/EleitoralPesquisa/VotacaoServlet.du" method="post">
+						<article class="candidatos" data-candidato="6">
+						<div class="thumb espaca">
+							<span class="btn_confirma"> <input type="hidden"
+								name="nuloPresidente" value="nuloPresidente"> <input
+								type="image"
+								src="${pageContext.request.contextPath}/img/candidatos/botao_confirma.png"
+								name="image">
+							</span> <img
+								src="${pageContext.request.contextPath}/img/candidatos/candidato12.png"
+								alt="Não sei - Não sei" title="Não sei - Não sei">
+						</div>
+						</article>
+					</form>
+				</div>
 			</div>
-			</article>
-			
-		</div>
+			</section>
+		</c:otherwise>
 
-		<!--/span-->
-		<div class="col-6 col-sm-6 col-lg-4">
-			<hgroup>
-			<h2>Dilma Roussef</h2>
-			<h3>PT</h3>
-			</hgroup>
-			<form action="VotacaoServlet.du" method="get">
-			<article class="candidatos" data-candidato="2">
-			<div class="thumb espaca">
-				<span class="btn_confirma">
-				<input type="hidden" id="dilma">
-				<input type="image" src="../img/candidatos/botao_confirma.png" 
-				name="image">
-				</span> 
-				<img
-					src="../img/candidatos/candidato3.png" alt="Dilma Roussef - PT"
-					title="Dilma Roussef - PT">
-			</div>
-			</article>
-			</form>
-		</div>
-		<!--/span-->
-		<div class="col-6 col-sm-6 col-lg-4">
-			<hgroup>
-			<h2>Nulo ou Branco</h2>
-			<h3>Indeciso</h3>
-			</hgroup>
-			<article class="candidatos" data-candidato="6"
-				data-identificacao="nao_sei">
-			<div class="thumb espaca">
-				<span class="btn_confirma"><img
-					src="../img/candidatos/botao_confirma.png"></span> <img
-					src="../img/candidatos/candidato12.png" alt="Não sei - Não sei"
-					title="Não sei - Não sei">
-			</div>
-			</article>
-			
-		</div>
-	</div>
-	</section>
+	</c:choose>
 
 	<!-- Footer -->
 	<footer>
@@ -221,22 +280,22 @@
 	</footer>
 
 	<!-- jQuery Version 1.11.0 -->
-	<script src="../js/jquery-1.11.0.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery-1.11.0.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="../js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
 	<!-- Plugin JavaScript -->
-	<script src="../js/jquery.easing.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/js/jquery.easing.min.js"></script>
 	<!-- Plugin Votacao -->
-	<script src="../js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 	<!--     Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
 	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
 	<!-- Custom Theme JavaScript -->
-	<script src="../js/grayscale.js"></script>
-
+	<script src="${pageContext.request.contextPath}/js/grayscale.js"></script>
 </body>
 </html>
