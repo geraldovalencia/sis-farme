@@ -79,15 +79,20 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<br>
-							<h1 style="color: black;">Resultados.</h1>
-							<p>
-							<span style="color:black">Acompanhe aqui sua votação.</strong></span></p>
-							
-							
-<!-- 							<a href="#about" class="btn btn2-circle page-scroll"> <i -->
-<!-- 								class="fa fa-angle-double-down animated"></i> -->
-<!-- 							</a> -->
-							
+					<h1 style="color: black;">Resultados.</h1>
+					<c:if test="${ckApagado != null}">
+						<h1 style="color: black;">${ckApagado}</h1>
+					</c:if>
+
+					<p>
+						<span style="color: black">Acompanhe aqui sua votação.</strong></span>
+					</p>
+
+
+					<!-- 							<a href="#about" class="btn btn2-circle page-scroll"> <i -->
+					<!-- 								class="fa fa-angle-double-down animated"></i> -->
+					<!-- 							</a> -->
+
 				</div>
 			</div>
 		</div>
