@@ -73,32 +73,103 @@
 	<!-- /.container --> </nav>
 
 	<!-- Intro Header -->
+
 	<header class="intro">
 	<div class="intro-body">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<br>
-					<h1 style="color: black;">Resultados.</h1>
-					<c:if test="${ckApagado != null}">
-						<h1 style="color: black;">${ckApagado}</h1>
-					</c:if>
-
-					<p>
-						<span style="color: black">Acompanhe aqui sua votação.</strong></span>
-					</p>
-
-
-					<!-- 							<a href="#about" class="btn btn2-circle page-scroll"> <i -->
-					<!-- 								class="fa fa-angle-double-down animated"></i> -->
-					<!-- 							</a> -->
-
-				</div>
+		<div class="row" align="center">
+			<div class="col-md-8 col-md-offset-2">
+				<br>
+				<h1 style="color: black;">Candidatos a Governador</h1>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-6 col-sm-4 col-lg-4">
+				<h2 style="color: black;">Cássio Cunha Lima</h2>
+				<div class="thumb espaca">
+					<span class="btn_confirma"> </span> <img
+						src="${pageContext.request.contextPath}/img/candidatos/cassio-peq.png"
+						alt="Cássio - PSDB" title="Cássio - PSDB">
+				</div>
+				<p style="color: black;">
+					<strong>VOTOS: ${votosCassio}</strong>
+				</p>
+			</div>
+			<div class="col-6 col-sm-4 col-lg-4">
+				<h2 style="color: black;">Ricardo Coutinho</h2>
+				<div class="thumb espaca">
+					<span class="btn_confirma"> </span> <img
+						src="${pageContext.request.contextPath}/img/candidatos/ricardo-peq.png"
+						alt="Ricardo Coutinho - PSB" title="Ricardo Coutinho - PSB">
+				</div>
+				<p style="color: black;">
+					<strong>VOTOS: ${votosRicardo}</strong>
+				</p>
+			</div>
+			<div class="col-6 col-sm-4 col-lg-4">
+				<h2 style="color: black;">Nulo ou Branco</h2>
+				<div class="thumb espaca">
+					<span class="btn_confirma"> </span> <img
+						src="${pageContext.request.contextPath}/img/candidatos/indeciso-peq.png"
+						alt="Não sei" title="Não sei">
+				</div>
+				<p style="color: black;">
+					<strong>VOTOS: ${votosNuloGov}</strong>
+				</p>
+			</div>
+		</div>
+		<a href="#about" class="btn btn2-circle page-scroll"> <i
+		class="fa fa-angle-double-down animated"></i>
+	</a>
 	</div>
 	</header>
+	
+	<section id="about" class="container content-section text-center">
+	<div class="row" align="center">
+		<div class="col-md-8 col-md-offset-2">
+			<br>
+			<h1 style="color: white;">Candidatos a Presidente</h1>
+		</div>
+	</div>
 
+	<div class="row">
+		<div class="col-6 col-sm-4 col-lg-4">
+			<h2>Aécio Neves</h2>
+			<div class="thumb espaca">
+				<span class="btn_confirma"> </span> <img
+					src="${pageContext.request.contextPath}/img/candidatos/aecio.png"
+					alt="Aécio Neves - PSDB" title="Aécio Neves - PSDB">
+			</div>
+			<p>
+				<strong>VOTOS: ${votosAecio}</strong>
+			</p>
+
+		</div>
+		<div class="col-6 col-sm-4 col-lg-4">
+			<h2>Dilma Roussef</h2>
+			<div class="thumb espaca">
+				<span class="btn_confirma"> </span> <img
+					src="${pageContext.request.contextPath}/img/candidatos/dilma.png"
+					alt="Dilma Roussef - PT" title="Dilma Roussef - PT">
+			</div>
+			<p>
+				<strong>VOTOS: ${votosDilma}</strong>
+			</p>
+		</div>
+		<div class="col-6 col-sm-4 col-lg-4">
+				<h2 >Nulo ou Branco</h2>
+				<div class="thumb espaca">
+					<span class="btn_confirma"> </span> <img
+						src="${pageContext.request.contextPath}/img/candidatos/indeciso-peq.png"
+						alt="Não sei" title="Não sei">
+				</div>
+				<p>
+					<strong>VOTOS: ${votosNuloPres}</strong>
+				</p>
+			</div>
+	</div>
+
+	</section>
 
 
 	<!-- Footer -->

@@ -30,13 +30,13 @@ public class PaginaVoto extends HttpServlet {
 		String val = null;
 					
 		//Se existir o COOKIE, redireciona, pois a pessoa já votou.
+		//Comentar este if, caso queira desabilitar os cookies.<-------------
 		
-		/*
 		if(cookieVotos != null){
 			System.out.println("Entrou no IF cookie != nulo");	
 			for (Cookie cookie : cookieVotos){
 				System.out.println("Entrou no Foeach de Cookies.");
-				if("votouTotal".equals(cookie.getName())){
+				if("votouCompleto".equals(cookie.getName())){
 					
 					session = request.getSession(false);
 					System.out.println("Entrou no IF do foreach do coockie e chamou votouTodos.JSP");
@@ -46,8 +46,6 @@ public class PaginaVoto extends HttpServlet {
 				}
 			}
 		}
-		
-		*/
 		
 		
 			System.out.println("Já que o cookie nao existe, chama votacao.JSP");

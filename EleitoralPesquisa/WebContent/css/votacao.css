@@ -63,7 +63,8 @@ a:focus {
 
 .navbar-custom {
     margin-bottom: 0;
-    border-bottom: 1px solid rgba(255,255,255,.3);
+    border-bottom: 1px solid rgba(215, 44, 44, 0.5);
+    text-shadow: 0.1em 0.1em 0.2em black;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #000;
@@ -89,12 +90,13 @@ a:focus {
 }
 
 .navbar-custom a {
+	/*Cor da Fonte do Menu*/
     color: #fff;
 }
 
 .navbar-custom .nav li.active {
-    outline: nonte;
-    background-color: rgba(255,255,255,.3);
+    outline: none;
+    background-color: rgba(215, 44, 44, 0.6);
 }
 
 .navbar-custom .nav li a {
@@ -107,7 +109,8 @@ a:focus {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a.active {
     outline: 0;
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(98, 225, 69, 0.6);
+    /*Cor do Hover no item de mENU*/
 }
 
 @media(min-width:767px) {
@@ -163,7 +166,7 @@ a:focus {
     .intro {
         height: 100%;
         padding: 0;
-        background: url(../img/troll.jpg) no-repeat bottom center scroll;
+        background: url(../img/troll2.jpg) no-repeat bottom center scroll;
     }
 
     .intro .intro-body .brand-heading {
@@ -174,6 +177,7 @@ a:focus {
         font-size: 25px;
     }
 }
+
 
 .btn-circle {
     width: 70px;

@@ -8,6 +8,8 @@
 <head>
 <title>Eleições 2014</title>
 
+<META HTTP-EQUIV="Refresh" CONTENT="5    ;URL=/EleitoralPesquisa/Resultados.du">
+
 <!-- Bootstrap Core CSS -->
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -82,14 +84,15 @@
 					<br>
 							<h1 style="color: black;">Obrigado por Participar.</h1>
 							<p>
-							<span style="color:black">Acompanhe aqui sua votação.</strong></span></p>
+							<span style="color:black">Como você já votou, acompanhe os resultados aguardando 5 segundos <br> ou clicando...</strong></span></p>
 							
-							<p>  <button type="button" class="btn btn-primary btn-lg">
+							<p>  <button type="button" class="btn btn-warning btn-lg">
 							<a href="/EleitoralPesquisa/Resultados.du"> AQUI.</a></button></p>
 							
 <!-- 							<a href="#about" class="btn btn2-circle page-scroll"> <i -->
 <!-- 								class="fa fa-angle-double-down animated"></i> -->
 <!-- 							</a> -->
+							
 							
 				</div>
 			</div>

@@ -250,7 +250,9 @@ public class VotacaoServlet extends HttpServlet {
 			votarTodos = "votouTodos";
 			request.getSession().setAttribute("votarTodos", votarTodos);
 			
-			Cookie cookieVoto = new Cookie("votouTotal","votou");
+			//Seta esse cookie. Toda vez que iniciar e tiver votado, em PaginaVoto.Java
+			//Irá carregar este nome do cookie "votouCompleto"
+			Cookie cookieVoto = new Cookie("votouCompleto","votou");
 			response.addCookie(cookieVoto);
 			System.out.println("Setou o cookie de voto total.");
 			
