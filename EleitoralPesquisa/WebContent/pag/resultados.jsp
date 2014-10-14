@@ -84,7 +84,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-6 col-sm-4 col-lg-4">
+			<div class="col-xs-12 col-6 col-sm-4 col-lg-4">
 				<h2 style="color: black;">Cássio Cunha Lima</h2>
 				<div class="thumb espaca">
 					<span class="btn_confirma"> </span> <img
@@ -95,7 +95,7 @@
 					<strong>VOTOS: ${votosCassio}</strong>
 				</p>
 			</div>
-			<div class="col-6 col-sm-4 col-lg-4">
+			<div class="col-xs-12 col-6 col-sm-4 col-lg-4">
 				<h2 style="color: black;">Ricardo Coutinho</h2>
 				<div class="thumb espaca">
 					<span class="btn_confirma"> </span> <img
@@ -106,7 +106,7 @@
 					<strong>VOTOS: ${votosRicardo}</strong>
 				</p>
 			</div>
-			<div class="col-6 col-sm-4 col-lg-4">
+			<div class="col-xs-12 col-6 col-sm-4 col-lg-4">
 				<h2 style="color: black;">Nulo ou Branco</h2>
 				<div class="thumb espaca">
 					<span class="btn_confirma"> </span> <img
@@ -133,7 +133,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-6 col-sm-4 col-lg-4">
+		<div class="col-xs-12 col-6 col-sm-4 col-lg-4">
 			<h2>Aécio Neves</h2>
 			<div class="thumb espaca">
 				<span class="btn_confirma"> </span> <img
@@ -145,7 +145,7 @@
 			</p>
 
 		</div>
-		<div class="col-6 col-sm-4 col-lg-4">
+		<div class="col-xs-12 col-6 col-sm-4 col-lg-4">
 			<h2>Dilma Roussef</h2>
 			<div class="thumb espaca">
 				<span class="btn_confirma"> </span> <img
@@ -156,7 +156,7 @@
 				<strong>VOTOS: ${votosDilma}</strong>
 			</p>
 		</div>
-		<div class="col-6 col-sm-4 col-lg-4">
+		<div class="col-xs-12 col-6 col-sm-4 col-lg-4">
 				<h2 >Nulo ou Branco</h2>
 				<div class="thumb espaca">
 					<span class="btn_confirma"> </span> <img

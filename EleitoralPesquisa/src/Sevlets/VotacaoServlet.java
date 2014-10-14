@@ -1,6 +1,8 @@
 package Sevlets;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -259,6 +261,11 @@ public class VotacaoServlet extends HttpServlet {
 			
 			request.getRequestDispatcher("pag/votouTodos.jsp").forward(
 					request, response);
+			
+			SimpleDateFormat d =  new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss.SSS");    
+			System.out.println("Data e Hora do voto: ");
+			String dataAtual = d.format( new Date( System.currentTimeMillis() ) );
+			System.out.println(dataAtual);
 			//Lembrar de setar os cookies para nao carregar votação apos a mesma
 		}else{
 			
@@ -267,6 +274,8 @@ public class VotacaoServlet extends HttpServlet {
 			request.getRequestDispatcher("pag/votacao.jsp").forward(
 					request, response);
 		}
+		
+		System.out.println("------------------[FIM]----------------------------");
 	}
 
 }

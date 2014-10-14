@@ -121,7 +121,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-xs-4 col-xs-col-xs-4 col-6 col-sm-6 col-lg-4">
+				<div class="col-xs-12 col-6 col-sm-6 col-lg-4">
 					<hgroup>
 					<h2>Cássio Cunha Lima</h2>
 					<h3>PSDB</h3>
@@ -144,7 +144,7 @@
 				</div>
 
 				<!--/span-->
-				<div class="col-xs-4 col-xs-4 col-6 col-sm-6 col-lg-4">
+				<div class="col-xs-12 col-6 col-sm-6 col-lg-4">
 					<hgroup>
 					<h2>Ricardo Coutinho</h2>
 					<h3>PSB</h3>
@@ -165,7 +165,7 @@
 					</form>
 				</div>
 				<!--/span-->
-				<div class="col-xs-4 col-xs-4 col-6 col-sm-6 col-lg-4">
+				<div class="col-xs-12 col-6 col-sm-6 col-lg-4">
 					<hgroup>
 					<h2>Nulo ou Branco</h2>
 					<h3>Indeciso</h3>
@@ -203,7 +203,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-xs-4 col-6 col-sm-6 col-lg-4">
+				<div class="col-xs-12 col-6 col-sm-6 col-lg-4">
 					<hgroup>
 					<h2>Aécio Neves</h2>
 					<h3>PSDB</h3>
@@ -226,7 +226,7 @@
 
 				</div>
 				<!--/span-->
-				<div class="col-xs-4 col-6 col-sm-6 col-lg-4">
+				<div class="col-xs-12 col-6 col-sm-6 col-lg-4">
 					<hgroup>
 					<h2>Dilma Roussef</h2>
 					<h3>PT</h3>
@@ -246,7 +246,7 @@
 					</form>
 				</div>
 				<!--/span-->
-				<div class="col-xs-4 col-6 col-sm-6 col-lg-4">
+				<div class="col-xs-12 col-6 col-sm-6 col-lg-4">
 					<hgroup>
 					<h2>Nulo ou Branco</h2>
 					<h3>Indeciso</h3>
